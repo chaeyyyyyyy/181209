@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>exhibition</title>
+</head>
+<style>
+	#header
+      {
+         width: 1920px;
+         height: 100px;
+         z-index: 3;
+      }
+      #header .menu
+      {   width: 800px;
+         height: 100px;
+         margin-left: 1145px;
+         z-index: 2;
+      }
+      .title
+{
+   position: absolute;
+   top: 60px;
+   left: 200px;
+   transform: translate(-50%,-50%);
+   width: 300px;
+   height: 70px;
+   border: 1px solid #000;
+   padding: 20px;
+   box-sizing: border-box;
+   text-align: center;
+   box-shadow: 0 10px 15px rgba(0,0,0,.5);
+   overflow: hidden;
+}
+.title:before
+{
+   content: '';
+   position: absolute;
+   top:0;
+   left: 0;
+   width:100%;
+   height: 100%;
+   background: #000;
+   mix-blend-mode: difference;
+}
+.title:after
+{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -50%;
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   mix-blend-mode: difference;
+   transition: 2s;}
+.title:hover:after
+{
+   left:50%;
+}
+h4
+{
+   margin: 0 0 40px;
+   font-size: 1.3em;
+   padding: 0;
+   color: #fff;
+}
+      ul
+      {
+         margin-top: 20px;
+         display: flex;
+         z-index: 3;
+      }
+      ul li
+      {
+         list-style: none;
+         padding:10px 30px; 
+      }   
+      ul li a
+      {
+         text-decoration: none;
+         text-transform: uppercase;
+         font-size: 1.1em;
+         color: #262626;
+         position: relative;
+      }
+      ul li a:before
+      {
+         content: '';
+         width: 10px;
+         height: 5px;
+         background: pink;
+         position: absolute;
+         top: 100%;
+         left:0;
+         transition: .5s;
+      }
+      ul li:hover a:before
+      {
+         width:50%;
+         transform: translateX(100%);
+      } 
+      #textbox
+      {
+      	position: relative;
+      	top:150px;
+      	right: -550px;
+      	width: 550px;
+      }
+      h1
+{
+	margin: 0 0 20px;
+	padding: 0;
+	font-size: 3em;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: #fff;
+	-webkit-text-stroke:2px #000;
+}
+p
+{
+	margin: 0;
+	padding: 0;
+	font-size: 1em
+}
+#mainpic{
+	position: fixed;
+	top: 50%;
+	left:50%;;
+	width: 100%;
+	transform: translate(-50%,-50%); 
+	opacity: 0.2;
+	z-index: -9
+	}  
+.scroll
+{
+   position: fixed;
+   top: 45%;
+   left: 94%;
+   transform: translate(-50%,-50%);
+
+
+}
+.scroll span
+{
+   display: block;
+   width: 20px;
+   height: 20px;
+   border-bottom: 1px solid #000;
+   border-right: 1px solid #000;
+   transform: rotate(45deg);
+   margin: -10px;
+   animation: animate 2s infinite;
+}
+.scroll span:nth-child(2)
+{
+   animation-delay: -0.2s;
+}
+.scroll span:nth-child(3)
+{
+   animation-delay: -0.4s;
+}
+
+
+@keyframes animate
+{
+   0%
+   {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px,-20px);
+   }
+   50%
+   {
+      opacity: 1;
+   }
+   100%
+   {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px,20px);
+   }
+}
+#art1{
+	position: absolute;
+	top: 600px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+
+}
+#art1:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art2{
+	position: absolute;
+	top: 600px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art2:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art3{
+	position: absolute;
+	top: 900px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art3:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art4{
+	position: absolute;
+	top: 900px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art4:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art5{
+	position: absolute;
+	top: 1200px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art5:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art6{
+	position: absolute;
+	top: 1200px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art6:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art7{
+	position: absolute;
+	top: 1500px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art7:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art8{
+	position: absolute;
+	top: 1500px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art8:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art9{
+	position: absolute;
+	top: 1800px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art9:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art10{
+	position: absolute;
+	top: 1800px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art10:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art11{
+	position: absolute;
+	top: 2100px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art11:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art12{
+	position: absolute;
+	top: 2100px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art12:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art13{
+	position: absolute;
+	top: 2400px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art13:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art14{
+	position: absolute;
+	top: 2400px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art14:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art15{
+	position: absolute;
+	top: 2700px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art15:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art16{
+	position: absolute;
+	top: 2700px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art16:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art17{
+	position: absolute;
+	top: 3000px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art17:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art18{
+	position: absolute;
+	top: 3000px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art18:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art19{
+	position: absolute;
+	top: 3300px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art19:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art20{
+	position: absolute;
+	top: 3300px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art20:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art21{
+	position: absolute;
+	top: 3600px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art21:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art22{
+	position: absolute;
+	top: 3600px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art22:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art23{
+	position: absolute;
+	top: 3900px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art23:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art24{
+	position: absolute;
+	top: 3900px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art24:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art25{
+	position: absolute;
+	top: 4200px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art25:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art26{
+	position: absolute;
+	top: 4200px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art26:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art27{
+	position: absolute;
+	top: 4500px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art27:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art28{
+	position: absolute;
+	top: 4500px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art28:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art29{
+	position: absolute;
+	top: 4800px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art29:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art30{
+	position: absolute;
+	top: 4800px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art30:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art31{
+	position: absolute;
+	top: 5100px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art31:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art32{
+	position: absolute;
+	top: 5100px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art32:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art33{
+	position: absolute;
+	top: 5400px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art33:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art34{
+	position: absolute;
+	top: 5400px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art34:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art35{
+	position: absolute;
+	top: 5700px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art35:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art36{
+	position: absolute;
+	top: 5700px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art36:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art37{
+	position: absolute;
+	top: 6000px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art37:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art38{
+	position: absolute;
+	top: 6000px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art38:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#art39{
+	position: absolute;
+	top: 6300px;
+	left: 150px;
+	width: 600px;
+	box-shadow: -5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art39:hover {
+	transform: rotateZ(3deg);
+	box-shadow: -10px 10px 15px rgba(150,150,150,.5)
+}
+#art40{
+	position: absolute;
+	top: 6300px;
+	right: 150px;
+	width: 600px;
+	box-shadow: 5px 5px 10px rgba(150,150,150,.5);
+	transition: all 0.5s ease;
+}
+#art40:hover {
+	transform: rotateZ(-3deg);
+	box-shadow: 10px 10px 15px rgba(150,150,150,.5)
+}
+#box{
+	position: absolute;
+	top: 6600px;
+	left: 0px;
+	width: 600px;
+}	
+</style>
+<body>
+	<div id="container">
+      <div id="header">
+          <header>
+         <div class="title">
+      <h4>Exhibition Archive</h4>
+         <div class="menu">
+            <ul>
+               <li onclick="location.href=''"><a href="#">site?</a></li>
+               <li onclick="location.href=''"><a href="#">archive</a></li>
+               <li onclick="location.href=''"><a href="#">gallery</a></li>
+               <li onclick="location.href='https://leekyuri.github.io/11_project1/'"><a href="#">FAQ</a></li>
+            </ul>
+         </div>
+      </div>
+      <div id="textbox">
+      	<center>
+      	<h1>2018_Designer_Artist</h1>
+		<p>As a site where you can collect various exhibitions held in Korea in 2018,<br>
+		I will show you various meaningful visualizations of the exhibition or the upcoming exhibition.</p>
+		</center>
+      </div>
+      <div class="scroll">
+         <span></span>
+         <span></span>
+         <span></span>
+      </div>
+      <img src="marble.png" id="mainpic"/>
+      <a href="https://chaeyyyyyyy.github.io/art1/art1.html"><img src="art1.png" id="art1"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art2/art2.html"><img src="art2.png" id="art2"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art3/art3.html"><img src="art3.png" id="art3"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art4/art4.html"><img src="art4.png" id="art4"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art5/art5.html"><img src="art5.png" id="art5"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art6/art6.html"><img src="art6.png" id="art6"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art7/art7.html"><img src="art7.png" id="art7"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art8/art8.html"><img src="art8.png" id="art8"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art9/art9.html"><img src="art9.png" id="art9"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art10/art10.html"><img src="art10.png" id="art10"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art11/art11.html"><img src="art11.png" id="art11"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art12/art12.html"><img src="art12.png" id="art12"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art13/art13.html"><img src="art13.png" id="art13"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art14/art14.html"><img src="art14.png" id="art14"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art15/art15.html"><img src="art15.png" id="art15"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art16/art16.html"><img src="art16.png" id="art16"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art17/art17.html"><img src="art17.png" id="art17"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art18/art18.html"><img src="art18.png" id="art18"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art19/art19.html"><img src="art19.png" id="art19"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art20/art20.html"><img src="art20.png" id="art20"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art21/art21.html"><img src="art21.png" id="art21"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art22/art22.html"><img src="art22.png" id="art22"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art23/art23.html"><img src="art23.png" id="art23"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art24/art24.html"><img src="art24.png" id="art24"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art25/art25.html"><img src="art25.png" id="art25"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art26/art26.html"><img src="art26.png" id="art26"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art27/art27.html"><img src="art27.png" id="art27"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art28/art28.html"><img src="art28.png" id="art28"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art29/art29.html"><img src="art29.png" id="art29"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art30/art30.html"><img src="art30.png" id="art30"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art31/art31.html"><img src="art31.png" id="art31"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art32/art32.html"><img src="art32.png" id="art32"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art33/art33.html"><img src="art33.png" id="art33"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art34/art34.html"><img src="art34.png" id="art34"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art35/art35.html"><img src="art35.png" id="art35"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art36/art36.html"><img src="art36.png" id="art36"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art37/art37.html"><img src="art37.png" id="art37"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art38/art38.html"><img src="art38.png" id="art38"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art39/art39.html"><img src="art39.png" id="art39"/></a>
+	  <a href="https://chaeyyyyyyy.github.io/art40/art40.html"><img src="art40.png" id="art40"/></a>
+	<img src="1.png" id="box"/>
+</body>
+</html>
